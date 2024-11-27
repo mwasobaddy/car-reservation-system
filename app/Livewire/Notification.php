@@ -3,20 +3,27 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Notification extends Component
 {
-    public $message;
+    public $messages = [];
 
-    protected $listeners = ['notify'];
-
+    #[On('notify')]
     public function notify($data)
     {
-        $this->message = $data;
+        $id = uniqid();
+        $this->messages[$id] = array_merge($data, ['id' => $id]);
+    }
+
+    public function removeMessage($id)
+    {
+        unset($this->messages[$id]);
     }
 
     public function render()
     {
-        return view('livewire.notification');
+        return view('livewire.notification')
+        ->layout('layouts.app');
     }
 }

@@ -41,44 +41,6 @@
                             <span id="user-guide-span" class="text-sm text-white p-4 w-full">User Guide</span>
                         </a>
                         
-                        <script>
-                            // FAQ Link Hover Effect
-                            const faqLink = document.querySelector('.faq-group');
-                            const faqIcon = document.getElementById('FAQ-icon');
-                            const faqText = faqLink.querySelector('#FAQ-span'); // Using querySelector instead of getElementById
-                        
-                            faqLink.addEventListener('mouseenter', () => {
-                                faqIcon.setAttribute('colors', 'primary:#000000,secondary:#1d4ed8'); // Hover color for icon
-                                faqText.classList.remove('text-white'); // Change text color
-                                faqText.classList.add('text-[#000000]'); // Change text color
-                                console.log(faqText);
-                            });
-                        
-                            faqLink.addEventListener('mouseleave', () => {
-                                faqIcon.setAttribute('colors', 'primary:#ffffff,secondary:#ffffff'); // Original color for icon
-                                faqText.classList.add('text-white'); // Change text color
-                                faqText.classList.remove('text-[#000000]'); // Remove hover text color
-                            });
-                        
-                            // User Guide Link Hover Effect
-                            const userGuideLink = document.querySelector('.user-guide-group');
-                            const userGuideIcon = document.getElementById('user-guide-icon');
-                            const userGuideText = userGuideLink.querySelector('#user-guide-span'); // Corrected to querySelector for the span
-                        
-                            userGuideLink.addEventListener('mouseenter', () => {
-                                userGuideIcon.setAttribute('colors', 'primary:#000000'); // Hover color for icon
-                                userGuideText.classList.remove('text-white'); // Change text color
-                                userGuideText.classList.add('text-[#000000]'); // Hover color for text
-                                console.log(userGuideText);
-                            });
-                        
-                            userGuideLink.addEventListener('mouseleave', () => {
-                                userGuideIcon.setAttribute('colors', 'primary:#ffffff'); // Original color for icon
-                                userGuideText.classList.add('text-white'); // Change text color
-                                userGuideText.classList.remove('text-[#000000]'); // Remove hover color for text
-                            });
-                        </script>
-                        
                     </div>
                 </div>
 
@@ -245,4 +207,36 @@
             </div>
         </div>
     </div>
+
+    <script>
+        (function() {
+            const faqLink = document.querySelector('.faq-group');
+            if (faqLink) {
+                const faqIcon = document.getElementById('FAQ-icon');
+                const faqText = faqLink.querySelector('#FAQ-span');
+        
+                faqLink.addEventListener('mouseenter', () => {
+                    console.log(faqText);
+                });
+        
+                faqLink.addEventListener('mouseleave', () => {
+                    faqText.classList.remove('text-[#000000]');
+                });
+            }
+        
+            const userGuideLink = document.querySelector('.user-guide-group');
+            if (userGuideLink) {
+                const userGuideIcon = document.getElementById('user-guide-icon');
+                const userGuideText = userGuideLink.querySelector('#user-guide-span');
+        
+                userGuideLink.addEventListener('mouseenter', () => {
+                    console.log(userGuideText);
+                });
+        
+                userGuideLink.addEventListener('mouseleave', () => {
+                    userGuideText.classList.remove('text-[#000000]');
+                });
+            }
+        })();
+    </script>
 </div>

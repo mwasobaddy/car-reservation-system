@@ -178,7 +178,7 @@
                             <div class="relative group">
                                 <input 
                                     :type="showPassword ? 'text' : 'password'"
-                                    id="password"
+                                    id="password1"
                                     wire:model.lazy="password"
                                     x-model="password"
                                     @input="checkFormValidity"
@@ -388,7 +388,7 @@
                             <div class="relative group">
                                 <input 
                                     :type="showPassword ? 'text' : 'password'"
-                                    id="password"
+                                    id="password2"
                                     wire:model.lazy="password"
                                     x-model="password"
                                     @input="checkFormValidity"
