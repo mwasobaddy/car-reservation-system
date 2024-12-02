@@ -16,11 +16,15 @@ class DirectorateSeeder extends Seeder
 
         // Sample directorates data
         $directorates = [
-            'Finance Directorate' => 'Headquarters',
-            'HR Directorate' => 'Western Branch',
-            'IT Directorate' => 'Coast Branch',
-            'Operations Directorate' => 'Rift Valley Branch',
-            'Marketing Directorate' => 'Central Branch',
+            'Audit Services' => 'Nairobi Region (Head Office)',
+            'Corporate Services' => 'Nairobi Region (Head Office)',
+            'Corporation Secretary & Legal Services' => 'Nairobi Region (Head Office)',
+            'Development' => 'Nairobi Region (Head Office)',
+            'Highway, Design & Safety (HDS)' => 'Nairobi Region (Head Office)',
+            'Maintenance' => 'Nairobi Region (Head Office)',
+            'No Directorate' => 'Nairobi Region (Head Office)',
+            'Planning, Research & Complianace (PRC)' => 'Nairobi Region (Head Office)',
+            'Public Private Partnerships (PPP)' => 'Nairobi Region (Head Office)',
         ];
 
         foreach ($directorates as $directorateName => $branchName) {
@@ -35,8 +39,5 @@ class DirectorateSeeder extends Seeder
                 ]);
             }
         }
-
-        // Optional: Create additional random directorates
-        Directorate::factory()->count(5)->create();
     }
 }

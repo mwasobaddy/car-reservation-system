@@ -14,11 +14,20 @@ class BranchSeeder extends Seeder
     public function run(): void
     {
         $branches = [
-            'Headquarters' => 'Nairobi',
-            'Western Branch' => 'Kisumu',
-            'Coast Branch' => 'Mombasa',
-            'Rift Valley Branch' => 'Nakuru',
-            'Central Branch' => 'Nyeri',
+            'Central Region' => 'Nyeri County',
+            'Coast Region' => 'Mombasa County',
+            'Corridor A' => 'Machakos County',
+            'Corridor B' => 'Nakuru County',
+            'Corridor C' => 'Kiambu County',
+            'Corridor D' => 'Nairobi County',
+            'Lower Eastern Region' => 'Machakos County',
+            'Nairobi Region (Head Office)' => 'Nairobi County',
+            'North Eastern Region' => 'Garissa County',
+            'North Rift Region' => 'Uasin Gishu County',
+            'Nyanza Region' => 'Kisumu County',
+            'South Rift Region' => 'Nakuru County',
+            'Upper Eastern Region' => 'Isiolo County',
+            'Western Region' => 'Kakamega County',
         ];
 
         foreach ($branches as $branchName => $locationName) {
@@ -33,8 +42,5 @@ class BranchSeeder extends Seeder
                 ]);
             }
         }
-
-        // Optional: Create additional random branches
-        Branch::factory()->count(5)->create();
     }
 }

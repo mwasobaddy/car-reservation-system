@@ -3,6 +3,17 @@
         messages: @entangle('messages').live,
         remove(id) {
             @this.call('removeMessage', id);
+        },
+        init() {
+            $watch('messages', (messages) => {
+                Object.keys(messages).forEach(id => {
+                    if (messages[id].timeout) {
+                        setTimeout(() => {
+                            this.remove(id);
+                        }, messages[id].timeout);
+                    }
+                });
+            });
         }
     }"
     class="fixed bottom-4 right-4 z-50 space-y-4"

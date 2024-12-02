@@ -48,10 +48,10 @@
             });
 
             document.addEventListener('alpine:init', () => {
-    Alpine.directive('init', Alpine.skipDuringClone((el, { expression }, { evaluate }) => {
-        evaluate(expression)
-    }))
-});
+                Alpine.directive('init', Alpine.skipDuringClone((el, { expression }, { evaluate }) => {
+                    evaluate(expression)
+                }))
+            });
         </script>
     </body>
 </html>

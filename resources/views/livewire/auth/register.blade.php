@@ -187,6 +187,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.first_name') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Other Names -->
@@ -217,6 +220,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.other_names') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- KeNHA Work Email -->
@@ -251,6 +257,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.work_email') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div> --}}
 
                         <!-- Normal Email For testing-->
@@ -282,6 +291,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.work_email') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Mobile Number -->
@@ -316,6 +328,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.mobile_number') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -358,6 +373,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.gender') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Designation -->
@@ -388,6 +406,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.designation') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Department -->
@@ -420,6 +441,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.department_id') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Directorate -->
@@ -452,6 +476,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.directorate_id') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Branch -->
@@ -484,6 +511,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.branch_id') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -497,9 +527,6 @@
                          x-transition:leave-end="opacity-0 -translate-x-4"
                          class="space-y-6"
                     >
-                        
-
-
                         <!-- Password Field with Show/Hide -->
                         <div class="space-y-2 relative group">
                             <label for="password" class="text-sm font-medium text-gray-700 flex items-center gap-2 group-focus-within:text-yellow-600 transition-colors">
@@ -543,6 +570,9 @@
                                     </svg>
                                 </button>
                             </div>
+                            @error('formData.password') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
 
                             <!-- Password Strength Indicator -->
                             <div class="mt-2" x-show="formData.password.length > 0">
@@ -641,6 +671,9 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('formData.password_confirmation') 
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                             <!-- Contextual Help -->
                             <p class="text-xs text-gray-500 pl-2">Re-enter your password for confirmation</p>
                         </div>

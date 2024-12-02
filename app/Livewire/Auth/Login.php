@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Auth;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -56,7 +56,8 @@ class Login extends Component
                 $this->dispatch('notify', [
                     'type' => 'error',
                     'message' => 'These credentials do not match our records.',
-                    'timeout' => 5000
+                    'timeout' => 5000,
+                    'persistent' => true // Add this flag
                 ]);
                 return;
             }
@@ -68,7 +69,8 @@ class Login extends Component
             $this->dispatch('notify', [
                 'type' => 'success',
                 'message' => 'Logged in successfully!',
-                'timeout' => 5000
+                'timeout' => 5000,
+                'persistent' => true // Add this flag
             ]);
 
         } catch (\Exception $e) {
@@ -76,7 +78,8 @@ class Login extends Component
             $this->dispatch('notify', [
                 'type' => 'error',
                 'message' => 'An error occurred during authentication.',
-                'timeout' => 5000
+                'timeout' => 5000,
+                'persistent' => true // Add this flag
             ]);
         }
     }
@@ -95,7 +98,7 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.login')
+        return view('livewire.auth.login')
             ->layout('layouts.app');
     }
 }

@@ -26,11 +26,5 @@ class RoleSeeder extends Seeder
                 'updated_by' => null,
             ]);
         }
-
-        // Optional: Create additional random roles
-        Role::factory()->count(5)->create([
-            'created_by' => null,
-            'updated_by' => null,
-        ]);
     }
 }

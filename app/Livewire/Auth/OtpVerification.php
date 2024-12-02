@@ -1,5 +1,5 @@
 <?php
-// app/Http/Livewire/Auth/OtpVerification.php
+
 namespace App\Livewire\Auth;
 
 use Livewire\Component;

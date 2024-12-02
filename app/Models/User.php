@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -19,6 +20,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -26,9 +28,22 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'user_id',
+        'first_name',
+        'other_names',
+        'work_email_hashed',
+        'work_email_encrypted',
+        'mobile_number_hashed',
+        'mobile_number_encrypted',
+        'gender',
+        'designation',
+        'department_id',
+        'directorate_id',
+        'branch_id',
+        'password_hashed',
+        'otp_code_encrypted',
+        'role_id',
+        'created_by'
     ];
 
     /**
@@ -63,5 +78,32 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function directorate()
+    {
+        return $this->belongsTo(Directorate::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+    public function hasRole($role)
+    {
+        return $this->role->name === $role;
+    }
+
+    /**
+     * Define the relationship with the Role model.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }
